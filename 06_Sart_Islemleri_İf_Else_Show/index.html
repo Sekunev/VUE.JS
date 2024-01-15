@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>Döngüler</h1>
+      <ul>
+        <li v-for="karakter in karakterler">{{karakter}}</li>
+      </ul>
+      <hr />
+      <ul>
+        <li v-for="(ozellik, index) in ozellikler">
+          {{index}}. {{ozellik.name}} - {{ozellik.age}}
+        </li>
+      </ul>
+      <hr />
+      <!-- <div v-for="(ozellik, index) in ozellikler">
+        <h3>{{ozellik.name}}</h3>
+        <p>{{ozellik.age}}</p>
+      </div>
+       template ile kapsayıcıdan kurtardık.
+      <template v-for="(ozellik, index) in ozellikler">
+        <h3>{{ozellik.name}}</h3>
+        <p>{{ozellik.age}}</p>
+      </template> -->
+
+      <template v-for="(ozellik, index) in ozellikler">
+        <div v-for="(val, key) in ozellik">
+          <h3>{{key}} : {{val}}</h3>
+        </div>
+      </template>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

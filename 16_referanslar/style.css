@@ -1,0 +1,11 @@
+#app-one {
+  border: 5px solid brown;
+  border-radius: 15px;
+  margin-bottom: 13px;
+  padding: 1rem;
+}
+#app-two {
+  border: 5px solid rgb(45, 177, 73);
+  border-radius: 15px;
+  padding: 1rem;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Klavye Etkinlikleri</h1>
+      <a href="https://vuejs.org/guide/essentials/event-handling.html"
+        >Vue Link</a
+      >
+      <div>
+        <label for="name">İsim: </label>
+        <input type="text" v-on:keyup.enter="isimYakala" />
+      </div>
+
+      <div>
+        <label for="age">Yaş: </label>
+        <input type="text" v-on:keyup.alt.enter="yasYakala" />
+      </div>
+      <hr />
+      <h1>Çift Yönde Veri İşleme</h1>
+      <div>
+        <label for="name">İsim: </label>
+        <input type="text" v-model="name" />
+        <p>{{name}}</p>
+      </div>
+
+      <div>
+        <label for="age">Yaş: </label>
+        <input type="text" v-model="age" />
+        <p>{{age}}</p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <h1>Dinamik CSS</h1>
+      <div v-bind:class="{red}">a</div>
+
+      <div v-on:click="aktiflik = !aktiflik" v-bind:class="{aktif:aktiflik}" ><span>Tıklanabilir Alan</span></div>
+
+      <button v-on:click="aktiflik = !aktiflik">Aktifliği Değiştir</button>
+      <button v-on:click="extra = !extra">Extralığı  Değiştir</button>
+
+      <div v-bind:class="degisikligiAlgila"><span>Bu Farklı bir alan</span></div>
+      
+     
+
+    <script src="app.js"></script>
+  </body>
+</html>

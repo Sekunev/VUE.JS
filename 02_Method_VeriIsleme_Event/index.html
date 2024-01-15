@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- attribut olarak gönderimi v-bind == : ile yapıyoruz -->
+    <h1>v-bind, v-html</h1>
+    <div id="app">
+      <h3>Ad: {{name}}</h3>
+      <a v-bind:href="webSite">Vue</a><br />
+      <a :href="webSite">Vue.Js</a><br />
+      <input type="text" name="" id="" :value="name" />
+      <h3 v-html="webSiteTag"></h3>
+    </div>
+    <hr />
+    <h1>Tarayıcı Etkinlikleri</h1>
+    <a href="https://vuejs.org/guide/essentials/event-handling.html"
+      >Vue Link</a
+    >
+    <div id="app1">
+      <h3>Yaş: {{yas}}</h3>
+      <button v-on:click.once="yas++">Artır</button>
+      <button v-on:click="yas--">Azalt</button>
+      <button v-on:click="yas++">Fonk ile Artır</button>
+      <button v-on:click="yas--">Fonk ile Azalt</button>
+      <hr />
+      <div id="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
+      <hr />
+      <a v-on:click.prevent="tıkla" :href="webSite">Vue.Js Web Site</a>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

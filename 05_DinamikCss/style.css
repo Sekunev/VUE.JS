@@ -1,0 +1,18 @@
+span {
+  background-color: brown;
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.aktif span {
+  background-color: aquamarine;
+  color: brown;
+}
+
+.extra span:after {
+  content: "extra içerik";
+  margin-left: 10px;
+}

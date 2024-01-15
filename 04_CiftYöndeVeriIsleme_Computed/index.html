@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>İşlenmiş Özellikler - Computed Properties</h1>
+      <button v-on:click="++a" style="margin-right: 5px;">a 1 artır</button>
+      <button v-on:click="++b">b 1 artır</button>
+      <br>
+      <p>A: {{a}}</p>
+      <p>B: {{b}}</p>
+
+      <p>Yaş + A ekle : {{ayaYasEkle}}</p>
+      <p>Yaş + B ekle = {{byaYasEkle}}</p>
+      
+     
+
+    <script src="app.js"></script>
+  </body>
+</html>
