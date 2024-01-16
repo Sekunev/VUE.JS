@@ -1,12 +1,21 @@
-<template lang="">
+<script setup>
+const vRainbow = {
+  mounted: (el) =>
+    (el.style.color = "#" + Math.random().toString().slice(2, 8)),
+};
+</script>
+
+<template>
   <div id="show-blogs">
     <h1>Tüm Blog Gönderileri</h1>
     <div v-for="blog in blogs" class="single-blog">
-      <h2>{{ blog.title }}</h2>
+      <!-- filters.buyutFiltre global main.js'den alındı. -->
+      <h2 v-rainbow>{{ $filters.buyutFiltre(blog.title) }}</h2>
       <p>{{ blog.body }}</p>
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {
@@ -14,8 +23,19 @@ export default {
       blogs: [],
     };
   },
+  methods: {
+    buyut: function (title) {
+      return title.toUpperCase();
+    },
+  },
+  computed: {
+    buyutComputed() {
+      return (title) => title.toUpperCase();
+    },
+  },
   created() {
-    const self = this; // self değişkenini tanımla
+    self = this;
+
     fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "GET",
       header: {
@@ -24,9 +44,8 @@ export default {
     })
       .then((res) => res.json())
       .then(function (json) {
-        // console.log(json);
+        console.log(json);
         self.blogs = json.slice(0, 10);
-        console.log(self.blogs);
       })
       .catch(function (err) {
         console.log(err);
@@ -46,5 +65,8 @@ export default {
   box-sizing: border-box;
   background-color: #e2e2e2;
   border-radius: 5px;
+}
+input:hover {
+  border: 3px solid #ccc;
 }
 </style>
